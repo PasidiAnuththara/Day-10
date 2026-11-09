@@ -5,3 +5,49 @@
 .number{
     color: rgb(30, 0, 255);
 }
+
+.txtnumber{
+    padding: 10px 15px;
+    margin: 5px 8px 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 180px;
+    transition: all 0.3s ease;
+}
+
+.button1{
+    color: rgb(241, 14, 230);
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgb(66, 38, 92);
+}
+
+.button2{
+    color: rgb(48, 14, 241);
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgb(66, 38, 92);
+}
+
+.font-weight-bold{
+    color: aquamarine;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: rgb(11, 162, 221);
+}
