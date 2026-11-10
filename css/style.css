@@ -1,3 +1,15 @@
-.card{
-    text-align: center;
+.theme{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: aqua;
+}
+
+.container{
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20230714/pngtree-dark-office-night-scene-with-laptop-stationery-and-mockup-space-on-image_3887440.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
