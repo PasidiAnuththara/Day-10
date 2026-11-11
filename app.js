@@ -62,6 +62,8 @@ function btnAdd() {
     document.getElementById("lblActivity").value = "";
 
     console.log(toDolist);
+    console.log(todoHistory);
+    
 
 }
 
@@ -80,6 +82,11 @@ function btnDelete(button) {
 
             let cardTitle = tdElement.querySelector('.card-title').innerText;
 
+            let index = toDolist.findIndex(item => item.cardTitle === cardTitle);
+            if(index != -1) {
+                toDolist.splice(index,1);
+            }
+
             todoHistory.push({
                 action: 'Deleted Task',
                 title: cardTitle,
@@ -88,6 +95,9 @@ function btnDelete(button) {
 
             tdElement.remove();
 
+            console.log(toDolist);
+            console.log(todoHistory);
+            
             Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
@@ -96,10 +106,6 @@ function btnDelete(button) {
         }
     });
 }
-
-console.log(todoHistory);
-
-
 
 async function btnEdit(button) {
     const { value: formValues } = await Swal.fire({
@@ -121,10 +127,11 @@ async function btnEdit(button) {
         let cardBody = button.closest('.card-body');
         if (formValues[0]) cardBody.querySelector('.card-title').innerText = formValues[0];
         if (formValues[1]) cardBody.querySelector('.card-text').innerText = formValues[1];
+
+        console.log(todoHistory);
+        console.log(toDolist);
     }
 }
-
-console.log(todoHistory);
 
 
 function btnDone(button) {
