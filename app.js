@@ -130,7 +130,7 @@ console.log(todoHistory);
 function btnDone(button) {
     let card = button.closest('.card');
 
-    let cardTitle = tdElement.querySelector('card-title').innerText;
+    let cardTitle = card.querySelector('.card-title').innerText;
 
     card.classList.toggle('bg-light');
 
