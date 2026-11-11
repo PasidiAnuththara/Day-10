@@ -78,7 +78,7 @@ function btnDelete(button) {
         if (result.isConfirmed) {
             let tdElement = button.closest('td');
 
-            let cardTitle = tdElement.querySelector('card-title').innerText;
+            let cardTitle = tdElement.querySelector('.card-title').innerText;
 
             todoHistory.push({
                 action: 'Deleted Task',
