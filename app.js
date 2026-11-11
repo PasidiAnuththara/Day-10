@@ -1,23 +1,31 @@
 const toDolist = []
 
+const todoHistory = []
+
 let taskNum = 0;
 
 function btnAdd() {
     let title = document.getElementById("lblTitle").value;
     let activity = document.getElementById("lblActivity").value;
 
-    if(title === "" || activity === "") {
+    if (title === "" || activity === "") {
         Swal.fire({
-            icon:'error',
+            icon: 'error',
             title: 'Oops...',
             text: 'Please fill in both title and activity!',
         });
         return;
-    } 
+    }
 
     toDolist.push({
         cardTitle: title,
         cardActivity: activity
+    });
+
+    todoHistory.push({
+        action: 'Added Task',
+        title: title,
+        time: new Date().toLocaleTimeString()
     });
 
     taskNum++;
@@ -69,6 +77,15 @@ function btnDelete(button) {
     }).then((result) => {
         if (result.isConfirmed) {
             let tdElement = button.closest('td');
+
+            let cardTitle = tdElement.querySelector('card-title').innerText;
+
+            todoHistory.push({
+                action: 'Deleted Task',
+                title: cardTitle,
+                time: new Date().toLocaleTimeString()
+            });
+
             tdElement.remove();
 
             Swal.fire({
@@ -106,5 +123,17 @@ async function btnEdit(button) {
 
 function btnDone(button) {
     let card = button.closest('.card');
+
+    let cardTitle = tdElement.querySelector('card-title').innerText;
+
     card.classList.toggle('bg-light');
+
+    todoHistory.push({
+        action: 'Deleted Task',
+        title: cardTitle,
+        time: new Date().toLocaleTimeString()
+    });
+
+    console.log("Current History : ",todoHistory);
+    
 }
