@@ -107,5 +107,4 @@ async function btnEdit(button) {
 function btnDone(button) {
     let card = button.closest('.card');
     card.classList.toggle('bg-light');
-    card.classList.toggle('opacity-50');
 }
