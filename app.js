@@ -97,6 +97,9 @@ function btnDelete(button) {
     });
 }
 
+console.log(todoHistory);
+
+
 
 async function btnEdit(button) {
     const { value: formValues } = await Swal.fire({
@@ -120,6 +123,9 @@ async function btnEdit(button) {
         if (formValues[1]) cardBody.querySelector('.card-text').innerText = formValues[1];
     }
 }
+
+console.log(todoHistory);
+
 
 function btnDone(button) {
     let card = button.closest('.card');
