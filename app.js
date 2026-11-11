@@ -1,6 +1,6 @@
-const toDolist = []
+const toDolist = [];
 
-const todoHistory = []
+const todoHistory = [];
 
 let taskNum = 0;
 
@@ -135,7 +135,7 @@ function btnDone(button) {
     card.classList.toggle('bg-light');
 
     todoHistory.push({
-        action: 'Deleted Task',
+        action: 'Completed',
         title: cardTitle,
         time: new Date().toLocaleTimeString()
     });
