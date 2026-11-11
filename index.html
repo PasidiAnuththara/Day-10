@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To-Do Application</title>
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
 
-    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 </head>
 
 <body>
     <center>
         <br>
-        <h1 class="theme"><b>TO do Application</b></h1>
+        <h1 class="theme"><b>TO Do Application</b></h1>
     </center>
     <br>
 
@@ -30,7 +30,7 @@
                     <div class="card-body">
                         <input id="lblTitle" type="text" class="form-control" placeholder="Enter Title">
                         <input id="lblActivity" type="text" class="form-control" placeholder="Enter Activity">
-                        <button onclick="btnAdd()" type="button" class="btn-solid theme-primary">ADD</button>
+                        <button onclick="btnAdd()" type="button" class="btn btn-primary w-100">ADD</button>
                     </div>
                 </div>
             </div>
@@ -43,14 +43,11 @@
             <tr id="toDoCards">
             </tr>
         </table>
+    </div>
 
-
-        <script src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
-
-</html>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 
 </html>
