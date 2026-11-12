@@ -5,6 +5,8 @@ let attempt = 3;
 
 const numberArray = [];
 
+let roundtime = 0;
+
 function guessnumber() {
     let userInput = Number(document.getElementById("txtnumber").value);
     
@@ -16,6 +18,10 @@ function guessnumber() {
     
     numberArray.push(userInput);
 
+    console.log("Array (numberArray) : ",numberArray);
+
+    roundtime++;
+    
     updateHistoryUI();
     
 
@@ -61,11 +67,12 @@ function updateHistoryUI(){
     if(historyList){
         historyList.innerHTML = "";
 
-        numberArray.forEach((guess,index)=>{
+        for(let i=0;i<3;i++){
             let list=document.createElement("list");
-            list.textContent=`Round ${index + 1}: ${guess}`;
+            let guessnumber= numberArray[i]!==undefined ? randomNumber[i] : "-";
+            list.innerHTML=`Round ${i + 1}: <strong>${guessValue}</strong>`; 
             historyList.appendChild(list);
-        });
+        }
     }
 }
 
