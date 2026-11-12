@@ -1,11 +1,23 @@
 let targetNumber = Math.floor(Math.random() * 10) + 1;
 console.log("Target Number : ", targetNumber);
+
 let attempt = 3;
 
+const numberArray = [];
 
 function guessnumber() {
     let userInput = Number(document.getElementById("txtnumber").value);
+    
+    if(!userInput || userInput < 1 || userInput > 10){
+        alert("Please enter a valid number between 1 and 10 . ");
+        return;
+    }
     console.log("User Input : ", userInput);
+    
+    numberArray.push(userInput);
+
+    updateHistoryUI();
+    
 
     if (userInput === targetNumber) {
         alert("Congratulations! It is the correct number.");
@@ -14,8 +26,8 @@ function guessnumber() {
         return;
 
     } else if (userInput > targetNumber) {
-        // console.log("High");
-        Swal.fire({
+        console.log("High");
+       /* Swal.fire({
             title: "Your number is grater than target number.Try again!",
             width: 600,
             padding: "3em",
@@ -26,9 +38,7 @@ function guessnumber() {
     url("/images/nyan-cat.gif")
     left top
     no-repeat
-  `
-        });
-
+  `*/
     } else if (userInput < targetNumber) {
         console.log("Low");
     }
@@ -45,6 +55,20 @@ function guessnumber() {
     document.getElementById("txtnumber").value = "";
 }
 
+function updateHistoryUI(){
+    let historyList = document.getElementById("historyList");
+
+    if(historyList){
+        historyList.innerHTML = "";
+
+        numberArray.forEach((guess,index)=>{
+            let list=document.createElement("list");
+            list.textContent=`Round ${index + 1}: ${guess}`;
+            historyList.appendChild(list);
+        });
+    }
+}
+
 // let clearButton = document.getElementById("btntryagain");
 // if(clearButton) {
 //     clearButton.addEventListener(`click`,()=>{
@@ -53,5 +77,4 @@ function guessnumber() {
 // }
 function btntryagain() {
     location.reload();
-
 }
