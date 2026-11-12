@@ -1,33 +1,39 @@
 let targetNumber = Math.floor(Math.random() * 10) + 1;
 console.log("Target Number : ", targetNumber);
+
 let attempt = 3;
 
+const randomNumber = [];
 
 function guessnumber() {
     let userInput = Number(document.getElementById("txtnumber").value);
-    console.log("User Input : ", userInput);
+    
 
-    if (userInput === targetNumber) {
+    if(!userInput || userInput < 1 || userInput >10 ){
+        alert("please enter a valid number between 1 and 10 . ");
+        return;
+    }
+    /*if (userInput === targetNumber) {
         alert("Congratulations! It is the correct number.");
         console.log("Congratulation.It is the correct Number. ");
         btntryagain();
-        return;
+        return;*/
 
     } else if (userInput > targetNumber) {
-        // console.log("High");
-        Swal.fire({
-            title: "Your number is grater than target number.Try again!",
-            width: 600,
-            padding: "3em",
-            color: "#7e0fbf",
-            background: "#ffffff url(/images/trees.png)",
-            backdrop: `
-    rgba(8, 0, 123, 0.56)
-    url("/images/nyan-cat.gif")
-    left top
-    no-repeat
-  `
-        });
+        console.log("High");
+//         Swal.fire({
+//             title: "Your number is grater than target number.Try again!",
+//             width: 600,
+//             padding: "3em",
+//             color: "#7e0fbf",
+//             background: "#ffffff url(/images/trees.png)",
+//             backdrop: `
+//     rgba(8, 0, 123, 0.56)
+//     url("/images/nyan-cat.gif")
+//     left top
+//     no-repeat
+//   `
+//         });
 
     } else if (userInput < targetNumber) {
         console.log("Low");
